@@ -5,7 +5,7 @@ pygame.font.init()
 
 WIDTH, HEIGHT = 500, 400
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Space move")
+pygame.display.set_caption("Crazy Dodger")
 
 BG = pygame.transform.scale(pygame.image.load("bg-image.jpg"), (WIDTH, HEIGHT))
 FONT = pygame.font.SysFont("comicsans", 20)
