@@ -13,12 +13,12 @@ FONT = pygame.font.SysFont("comicsans", 20)
 # Player variables
 PLAYER_WIDTH = 40
 PLAYER_HEIGHT = 50
-PLAYER_VEL = 10
+PLAYER_VEL = 5
 
 # Enemy variables
 STAR_WIDTH = 5
 STAR_HEIGHT = 5
-STAR_VEL = 5
+STAR_VEL = 4
 
 # Game asset view
 def draw(player, elapsed_time, stars):
@@ -96,6 +96,13 @@ def main():
                 stars.remove(star)
                 hit = True
                 break
+        
+        if hit:
+            lost_text = FONT.render("You Lost!", 1, "white")
+            WIN.blit(lost_text, (WIDTH/2 - lost_text.get_width()/2, HEIGHT/2 - lost_text.get_height()/2))
+            pygame.display.update()
+            pygame.time.delay(4000)
+            break
 
 
         draw(player, elapsed_time, stars)
